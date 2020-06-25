@@ -6,6 +6,13 @@ from cashman.model.transaction_type import TransactionType
 
 app = Flask(__name__)
 
+app.debug = True
+
+app.config['SECRET_KEY'] = '<replace with a secret key>'
+
+#flasktoolbar = DebugToolbarExtension(app)
+
+
 transactions = [
   Income('Salary', 5000),
   Income('Dividends', 200),
@@ -47,4 +54,4 @@ def add_expense():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run()
